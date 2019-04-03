@@ -1,0 +1,32 @@
+app:
+  name: Website
+  code: Web
+  notify: appz@cloudbourne.co
+
+build:
+  version: 2.0
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: wordpress-5.0_avada5.7
+  image_name: myco/website
+
+deploy:
+  context: myco/DEV
+  replicas: 1
+  port:
+  - 80
+
+volumes:
+  - claim: website-data-pvc
+    mount: /appz/data
+    name: data
+  - claim: website-uploads-pvc
+    mount: /var/www/html/wordpress/wp-content/uploads
+    name: uploads
+
+monitor:
+  notify: appzops@cloudbourne.co      
+
+properties:
+  rivision : 2
