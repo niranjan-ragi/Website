@@ -18,7 +18,7 @@ deploy:
   - 80
 
 volumes:
-  - claim: website-uploads-pvc
+  - claim: ecs-website-uploads-pvc
     mount: /var/www/html/wordpress/wp-content/uploads
     name: uploads
 
