@@ -18,9 +18,6 @@ deploy:
   - 80
 
 volumes:
-  - claim: website-data-pvc
-    mount: /appz/data
-    name: data
   - claim: website-uploads-pvc
     mount: /var/www/html/wordpress/wp-content/uploads
     name: uploads
