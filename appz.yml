@@ -1,6 +1,6 @@
 app:
-  name: Website
-  code: Web
+  name: eCloudControl.com
+  code: ECSWEB
   notify: appz@cloudbourne.co
 
 build:
@@ -29,4 +29,9 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-  rivision : 2
+  revision : 2
+  MYSQL_HOST : "mysql-5-7:3306"
+  MYSQL_DATABASE : "ecloudcontrol_com"
+  MYSQL_USER : "ecloudcontrol_com"
+  SITE_URL : "www2.ecloudcontrol.com"
+  SITE_TITLE : "eCloudControl.com"
