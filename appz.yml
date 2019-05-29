@@ -19,7 +19,7 @@ deploy:
 
 volumes:
   - claim: ecs-website-uploads-pvc
-    mount: /var/www/html/wordpress/wp-content/uploads
+    mount: /var/www/html/wp-content/uploads
     name: uploads
 
 monitor:
