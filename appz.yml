@@ -8,7 +8,7 @@ build:
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: wordpress-5.2_avada5.7
+  image_template: wordpress-5.2_avada5.9
   image_name: myco/website
 
 deploy:
