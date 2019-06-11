@@ -1,7 +1,7 @@
 app:
   name: eCloudControl.com
   code: ECSWEB
-  notify: appz@cloudbourne.co
+  notify: appzdev@cloudbourne.co
 
 build:
   version: 2.0
@@ -26,7 +26,7 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-  revision : 17
+  revision : 18
   MYSQL_HOST : "mysql-5-7:3306"
   MYSQL_DATABASE : "ecloudcontrol_com"
   MYSQL_USER : "ecloudcontrol_com"
