@@ -33,5 +33,5 @@ properties:
   MYSQL_HOST : "mysql-5-7:3306"
   MYSQL_DATABASE : "ecloudcontrol_com"
   MYSQL_USER : "ecloudcontrol_com"
-  SITE_URL : "https://www2.ecloudcontrol.com"
+  SITE_URL : "https://ecloudcontrol.com"
   SITE_TITLE : "eCloudControl.com"
