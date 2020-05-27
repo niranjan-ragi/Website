@@ -15,7 +15,7 @@ deploy:
   context: myco/DEV
   replicas: 1
   port:
-  - 80
+  - 443
 
 volumes:
   - claim: wp-uploads
