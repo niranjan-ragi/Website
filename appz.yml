@@ -4,7 +4,7 @@ app:
   notify: appzdev@cloudbourne.co
 
 build:
-  version: 2.0
+  version: 3.0
   env: DEV
   build_file: none
   output_files: output/*.zip
@@ -18,12 +18,20 @@ deploy:
   - 80
 
 volumes:
-  - claim: ecs-website-uploads-pvc
+  - claim: wp-uploads
     mount: /var/www/html/wp-content/uploads
     name: uploads
-  - claim: ecs-website-uploads-backup-pvc
+    size: 250Gi
+    mode: ReadWriteOnce
+    class: standard
+    matchLabels: false
+  - claim: wp-backup
     mount: /appz/backup
     name: backup
+    size: 250Gi
+    mode: ReadWriteOnce
+    class: standard
+    matchLabels: false
 
 monitor:
   notify: appzops@cloudbourne.co      
@@ -31,7 +39,7 @@ monitor:
 properties:
   revision : 24
   MYSQL_HOST : "mysql-5-7:3306"
-  MYSQL_DATABASE : "ecloudcontrol_com"
+  MYSQL_DATABASE : "ecloudcontrol_com_v3"
   MYSQL_USER : "ecloudcontrol_com"
-  SITE_URL : "https://ecloudcontrol.com"
+  SITE_URL : "https://www-v3.ecloudcontrol.com"
   SITE_TITLE : "eCloudControl.com"
