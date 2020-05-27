@@ -40,6 +40,17 @@ properties:
   revision : 24
   MYSQL_HOST : "mysql-5-7:3306"
   MYSQL_DATABASE : "ecloudcontrol_com_v3"
+  MYSQL_PASSWORD:
+     vault: MYSQL_PASSWORD
   MYSQL_USER : "ecloudcontrol_com"
   SITE_URL : "https://www-v3.ecloudcontrol.com"
   SITE_TITLE : "eCloudControl.com"
+  ADMIN_USER : cloudbourne
+  ADMIN_EMAIL : appzdev@cloudbourne.co
+  ADMIN_PASSWORD:
+     vault: ADMIN_PASSWORD_KEY
+  SITE_PRIVATE_KEY:
+     vault: SITE_PRIVATE_KEY
+  SITE_CERT: 
+     vault: SITE_CERT
+       
