@@ -45,8 +45,8 @@ properties:
   MYSQL_USER : "ecloudcontrol_com"
   SITE_URL : "https://www-v3.ecloudcontrol.com"
   SITE_TITLE : "eCloudControl.com"
-  ADMIN_USER : cloudbourne
-  ADMIN_EMAIL : appzdev@cloudbourne.co
+  ADMIN_USER : webmaster
+  ADMIN_EMAIL : webmaster@ecloudcontrol.com
   ADMIN_PASSWORD:
      vault: ADMIN_PASSWORD_KEY
   SITE_PRIVATE_KEY:
