@@ -48,9 +48,9 @@ properties:
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
   ADMIN_PASSWORD:
-     vault: ADMIN_PASSWORD_KEY
+     vault: ADMIN_PASSWORD
   SITE_PRIVATE_KEY:
-     vault: SITE_PRIVATE_KEY
+     vault: SITE_PRIVATE
   SITE_CERT: 
      vault: SITE_CERT
        
