@@ -38,7 +38,7 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-  revision : 24
+  revision : 25
   MYSQL_HOST : "mysql-5-7:3306"
   MYSQL_DATABASE : "ecloudcontrol_com_v3"
   MYSQL_USER : "ecloudcontrol_com"
