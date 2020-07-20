@@ -43,7 +43,7 @@ properties:
   MYSQL_USER : "ecloudcontrol_com"
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  SITE_URL : "https://ecloudcontrol.com"
+  SITE_URL : "https://www-v3ecloudcontrol.com"
   SITE_TITLE : "CLOUDCONTROL"
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
