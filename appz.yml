@@ -54,5 +54,5 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
-  revision : 38
+  revision : 39
        
