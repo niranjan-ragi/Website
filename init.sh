@@ -39,7 +39,7 @@ fi
 rm error.txt
 fi
 
-filename3="AppZ-CloudControl-brochure"
+filename3="AppZ-CloudControl-brochure-Oct-21"
 if  grep $filename2  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
   echo "theme change already exist..."
 else
