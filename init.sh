@@ -53,7 +53,7 @@ fi
 rm error.txt
 fi
 
-filename4="EdTech Startup Case Study  Migrating Their Application  To Kubernetes On Cloud"
+filename4="Case-Study-EdTech-Cloud-Native-v05"
 if  grep $filename4  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
   echo "theme change already exist..."
 else
