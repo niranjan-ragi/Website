@@ -5,14 +5,13 @@ app:
 
 build:
   version: 3.0
-  env: DEV
+  env: PROD
   build_file: none
   output_files: output/*.zip
   image_template: wordpress-5.4
-  image_name: myco/website
 
 deploy:
-  context: myco/DEV
+  context: ecloudcontrol/PROD
   type: statefulset
   replicas: 1
   port:
@@ -23,19 +22,10 @@ volumes:
     mount: /var/www/html/wp-content/uploads
     name: uploads
     size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
   - claim: wp-backup
     mount: /appz/backup
     name: backup
-    size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
-
-monitor:
-  notify: appzops@cloudbourne.co      
+    size: 250Gi   
 
 properties:
   MYSQL_HOST : "mysql-5-7:3306"
@@ -55,4 +45,3 @@ properties:
   SITE_CERT: 
      vault: SITE_CERT
   revision : 40
-       
