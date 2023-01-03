@@ -34,7 +34,7 @@ properties:
   ENABLE_HA : "no"
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  #SITE_URL : "https://ecloudcontrol-prod-website-3-0.0314f142.lowtouch.cloud"
+  SITE_URL : "https://ecloudcontrol-prod-website-3-0.0314f142.lowtouch.cloud"
   SITE_TITLE : "CLOUDCONTROL"
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
@@ -44,5 +44,5 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
-  revision : 57
+  revision : 58
   
