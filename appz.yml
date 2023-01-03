@@ -40,9 +40,9 @@ properties:
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
   ADMIN_PASSWORD:
      vault: ADMIN_PASSWORD
-  SITE_PRIVATE_KEY:
-     vault: SITE_PRIVATE_KEY
-  SITE_CERT: 
-     vault: SITE_CERT
+  #SITE_PRIVATE_KEY:
+   #  vault: SITE_PRIVATE_KEY
+  #SITE_CERT: 
+   #  vault: SITE_CERT
   revision : 61
   
