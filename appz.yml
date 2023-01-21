@@ -8,7 +8,7 @@ build:
   env: PROD
   build_file: none
   output_files: output/*.zip
-  image_template: wordpress-5.4
+  image_template: wordpress-5.8
 
 deploy:
   context: ecloudcontrol/PROD
@@ -33,6 +33,7 @@ properties:
   MYSQL_DATABASE : "ecloudcontrol_com_v3"
   MYSQL_USER : "ecloudcontrol_com"
   ENABLE_HA : "no"
+  WP_BACKUP_VERBOSE : 0
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
   SITE_URL : "https://www.ecloudcontrol.com"
@@ -45,4 +46,4 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
-  revision : 67
+  revision : 68
