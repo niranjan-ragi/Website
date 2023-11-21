@@ -8,13 +8,14 @@ build:
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: wordpress-5.4
+  image_template: wordpress-6.2
   image_name: myco/website
 
 deploy:
   context: myco/DEV
   type: statefulset
   replicas: 1
+  resources: xx-large
   port:
   - 443
 
