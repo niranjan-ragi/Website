@@ -15,7 +15,7 @@ deploy:
   type: statefulset
   ingress: none
   replicas: 1
-  resources: xx-large
+  resources: x-large
   port:
   - 443
 
