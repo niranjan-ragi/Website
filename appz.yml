@@ -20,9 +20,9 @@ deploy:
   - 443
 
 volumes:
-  - claim: wp-uploads
-    mount: /var/www/html/wp-content/uploads
-    name: uploads
+  - claim: wp-content
+    mount: /var/www/html/wp-content
+    name: wp-content
     size: 250Gi
   - claim: wp-backup
     mount: /appz/backup
