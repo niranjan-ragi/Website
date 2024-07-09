@@ -13,7 +13,7 @@ build:
 deploy:
   context: ecloudcontrol/PROD
   type: statefulset
-  ingress: none
+  #ingress: none
   replicas: 1
   resources: x-large
   port:
