@@ -21,7 +21,7 @@ deploy:
 
 volumes:
   - claim: wp-content
-    mount: /var/www/html/wp-content
+    mount: /var/www/html/wp-content/uploads
     name: wp-content
     size: 250Gi
   - claim: wp-backup
