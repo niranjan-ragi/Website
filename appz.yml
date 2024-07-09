@@ -1,14 +1,14 @@
 app:
-  name: eCloudControl.com
+  name: v4.eCloudControl.com
   code: ECSWEB
   notify: appzdev@cloudbourne.co
 
 build:
-  version: 3.0
+  version: 4.0
   env: PROD
   build_file: none
   output_files: output/*.zip
-  image_template: wordpress-6.2
+  image_template: wordpress-6.5
 
 deploy:
   context: ecloudcontrol/PROD
@@ -31,13 +31,13 @@ volumes:
 
 properties:
   MYSQL_HOST : "mysql-5-7:3306"
-  MYSQL_DATABASE : "ecloudcontrol_com_v3"
+  MYSQL_DATABASE : "ecloudcontrol_com_v4"
   MYSQL_USER : "ecloudcontrol_com"
   ENABLE_HA : "no"
   WP_BACKUP_VERBOSE : 0
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  SITE_URL : "https://www.ecloudcontrol.com"
+  SITE_URL : "https://www.v4.ecloudcontrol.com"
   SITE_TITLE : "CLOUDCONTROL"
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
