@@ -18,6 +18,7 @@ deploy:
   resources: x-large
   port:
   - 443
+  - 8080
 
 volumes:
   - claim: wp-content
