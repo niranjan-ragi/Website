@@ -4,7 +4,7 @@ app:
   notify: appzdev@cloudbourne.co
 
 build:
-  version: 4.0
+  version: 5.0
   env: PROD
   build_file: none
   output_files: output/*.zip
@@ -38,7 +38,7 @@ properties:
   WP_BACKUP_VERBOSE : 0
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  SITE_URL : "https://v4.ecloudcontrol.com"
+  SITE_URL : "https://hybcloudtechnologies.com"
   SITE_TITLE : "CLOUDCONTROL"
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
