@@ -38,7 +38,7 @@ properties:
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
   SITE_URL : "https://www.lowtouch.ai"
-  SITE_TITLE : "CLOUDCONTROL"
+  SITE_TITLE : "Lowtouch.Ai"
   ADMIN_USER : webmaster
   ADMIN_EMAIL : webmaster@ecloudcontrol.com
   ADMIN_PASSWORD:
