@@ -1,109 +1,18 @@
 #!/bin/bash
-filename="AppZ-Healthcare-Case-Study-Oct-2020-v2-1"
-if  grep $filename  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-	    rm error.txt
-	    echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
-filename1="CloudControl-Approach-Database-Migration-and-Management-V1"
-if  grep $filename1  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_01.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
-filename2="CC_Brochure_May2021-1"
-if  grep $filename2  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_02.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
 
-filename3="AppZ-CloudControl-brochure-Oct-21"
-if  grep $filename3  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_03.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
+filename="mychildtheme_add_google_analytics"
 
-filename4="Case-Study-EdTech-Cloud-Native-v05"
-if  grep $filename4  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_04.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
+header_file="/var/www/html/wp-content/themes/Avada-child-theme/functions.php"
+injection_file="/var/www/html/wp-content/plugin-customization/avada_childtheme_add_google_analytics_functions_append.php"
 
-filename5="CCS-AppZ-for-AutoMobile-Company-V01"
-if  grep $filename5  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
+if grep -q "$filename" "$header_file"; then
+    echo "The Google Analytics snippet already exists in functions.php"
 else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_05.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
+    sed -i "/add_action( 'after_setup_theme', 'avada_lang_setup' );/r $injection_file" "$header_file"
 
-filename6="Signature-SRE-Dec2022-v8"
-if  grep $filename6  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_06.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
+    if [ $? -eq 0 ]; then
+        echo "functions.php successfully updated"
     else
-        echo "header.php successfully updated"
-fi
-rm error.txt
-fi
-filename7="White-Paper_-Migrating-Data-from-Sybase-to-Azure-SQL-Server-v7"
-if  grep $filename6  -q  /var/www/html/wp-content/themes/Avada/header.php ;then
-  echo "theme change already exist..."
-else
-    sed -n -i -e '/<?php wp_head(); ?>/r /wp-contents/plugin-customization/contact7_download_07.php' -e 1x -e '2,${x;p}' -e '${x;p}' /var/www/html/wp-content/themes/Avada/header.php 2>error.txt
-    if [ -s error.txt ];then
-            rm error.txt
-            echo "failed to update header.php"
-    else
-        echo "header.php successfully updated"
-fi
-rm error.txt
+        echo "Failed to update functions.php"
+    fi
 fi
