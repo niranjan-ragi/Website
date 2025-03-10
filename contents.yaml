@@ -6,13 +6,13 @@ theme:
     url: https://www.ecloudcontrol.com/wp-content/uploads/2025/02/Avada-Child-Theme-7.9.14.zip
 
 plugins:
-   - https://www.ecloudcontrol.com/wp-content/uploads/2024/07/fusion-core-5.11.9.zip
-   - https://www.ecloudcontrol.com/wp-content/uploads/2024/07/fusion-builder-3.11.9.zip
+   - https://www.ecloudcontrol.com/wp-content/uploads/2025/03/fusion_core-5.11.14.zip
+   - https://www.ecloudcontrol.com/wp-content/uploads/2025/03/fusion-builder-3.11.14.zip
    - https://downloads.wordpress.org/plugin/tuxedo-big-file-uploads.2.1.2.zip
    - https://www.ecloudcontrol.com/wp-content/uploads/2024/07/revslider-6.7.14.zip
-   - https://downloads.wordpress.org/plugin/contact-form-7.6.0.3.zip
-   - https://downloads.wordpress.org/plugin/iubenda-cookie-law-solution.3.12.0.zip
-   - https://downloads.wordpress.org/plugin/wp-mail-smtp.4.3.0.zip
+   - https://downloads.wordpress.org/plugin/contact-form-7.6.0.4.zip
+   - https://downloads.wordpress.org/plugin/iubenda-cookie-law-solution.3.12.1.zip
+   - https://downloads.wordpress.org/plugin/wp-mail-smtp.4.4.0.zip
    - https://downloads.wordpress.org/plugin/wordpress-seo.24.6.zip
    - https://www.ecloudcontrol.com/wp-content/uploads/2024/07/qr-code-generator.zip
    - https://www.ecloudcontrol.com/wp-content/uploads/2024/10/acf-extended.zip
@@ -24,3 +24,4 @@ plugins:
    - https://www.lowtouch.ai/wp-content/uploads/2025/03/wordpress-seo-premium-24.6.zip
    - https://www.lowtouch.ai/wp-content/uploads/2025/03/chaty-pro-3.3.5.zip
    - https://downloads.wordpress.org/plugin/advanced-google-recaptcha.1.29.zip
+   - https://www.lowtouch.ai/wp-content/uploads/2025/03/wp-mail-smtp-pro.zip
