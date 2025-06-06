@@ -1,10 +1,4 @@
-#!/bin/bash
-
-# Define the header.php file path
-HEADER_FILE="/var/www/html/wp-content/themes/Avada/header.php"
-
-# Define the content to insert into <head>
-HEAD_CONTENT=$(cat << 'EOF'
+<head>
     <title>Chat Widget Example</title>
     <!-- Add React and ReactDOM -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
@@ -12,11 +6,8 @@ HEAD_CONTENT=$(cat << 'EOF'
     <!-- Add the chat widget and its styles -->
     <link rel="stylesheet" href="https://sitechime2025b.lowtouch.ai/data/openai-chat-widget.css">
     <script src="https://sitechime2025b.lowtouch.ai/data/chat-widget.umd.js"></script>
-EOF
-)
-
-# Define the content to insert into <body>
-BODY_CONTENT=$(cat << 'EOF'
+</head>
+<body>
     <div id="chat-widget"></div>
     <script>
         // Initialize the chat widget
@@ -34,20 +25,4 @@ BODY_CONTENT=$(cat << 'EOF'
             }
         });
     </script>
-EOF
-)
-
-# Escape special characters for sed
-HEAD_CONTENT=$(echo "$HEAD_CONTENT" | sed -e 's/[\/&]/\\&/g' -e 's/$/\\n/' | tr -d '\n')
-BODY_CONTENT=$(echo "$BODY_CONTENT" | sed -e 's/[\/&]/\\&/g' -e 's/$/\\n/' | tr -d '\n')
-
-# Backup the original header.php
-cp "$HEADER_FILE" "${HEADER_FILE}.bak"
-
-# Insert head content before </head>
-sed -i "/<\/head>/i $HEAD_CONTENT" "$HEADER_FILE"
-
-# Insert body content after <div id="wrapper">
-sed -i "/<div id=\"wrapper\"/a $BODY_CONTENT" "$HEADER_FILE"
-
-echo "header.php has been updated with the chat widget code."
+</body>
