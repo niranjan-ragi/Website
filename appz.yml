@@ -15,6 +15,7 @@ deploy:
   context: skchekon/DEV
   type: statefulset
   replicas: 1
+  resources: x-large
   port:
   - 80
 
