@@ -8,11 +8,11 @@ build:
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: wordpress-6.2
+  image_template: wordpress-6.7
   image_name: myco/website
 
 deploy:
-  context: myco/DEV
+  context: skchekon/DEV
   type: statefulset
   replicas: 1
   resources: xx-large
@@ -36,12 +36,12 @@ volumes:
     matchLabels: false
 
 monitor:
-  notify: appzops@cloudbourne.co      
+  notify: skchekon@ecloudcontrol.com      
 
 properties:
   MYSQL_HOST : "mysql-5-7:3306"
   MYSQL_DATABASE : "ecloudcontrol_com_v3"
-  MYSQL_USER : "ecloudcontrol_com"
+  MYSQL_USER : "wordpress"
   ENABLE_HA : "no"
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
@@ -55,5 +55,5 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
-  revision : 40
+  revision : 1
        
