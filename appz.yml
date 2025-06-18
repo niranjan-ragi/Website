@@ -1,7 +1,7 @@
 app:
   name: eCloudControl.com
-  code: ECSWEB
-  notify: appzdev@cloudbourne.co
+  code: wordpress
+  notify: skchekon@ecloudcontrol.com
 
 build:
   version: 3.0
@@ -9,51 +9,39 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: wordpress-6.7
-  image_name: myco/website
+#  image_name: myco/website
 
 deploy:
   context: skchekon/DEV
   type: statefulset
   replicas: 1
-  resources: xx-large
   port:
-  - 443
+  - 80
 
 volumes:
-  - claim: wp-uploads
-    mount: /var/www/html/wp-content/uploads
-    name: uploads
-    size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
-  - claim: wp-backup
-    mount: /appz/backup
-    name: backup
-    size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
-
-monitor:
-  notify: skchekon@ecloudcontrol.com      
+- claim: wordpress-data
+  mount: /var/www/html/wp-content/uploads
+  name: uploads
+  size: 5Gi   
+- claim: wordpress-backup
+  mount: /appz/backup
+  name: backup
+  size: 5Gi 
 
 properties:
+  ENABLE_HA: "no"  
+  #if HA is disabled
   MYSQL_HOST : "mysql-5-7:3306"
-  MYSQL_DATABASE : "ecloudcontrol_com_v3"
-  MYSQL_USER : "wordpress"
-  ENABLE_HA : "no"
+  #if HA is enabled
+  #MYSQL_MASTER_HOST : "mariadb-master-10-4:3306"
+  #MYSQL_SLAVE_HOST : "mariadb-slave-10-4:3306"
+  MYSQL_USER: wordpress
+  MYSQL_DATABASE: wordpress
+  ADMIN_USER: wpadmin
+  ADMIN_EMAIL: skchekon@ecloudcontrol.com
+  SITE_TITLE: "Wordpress AppZ Workshop Demo"
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  SITE_URL : "https://www.ecloudcontrol.com"
-  SITE_TITLE : "CLOUDCONTROL"
-  ADMIN_USER : webmaster
-  ADMIN_EMAIL : webmaster@ecloudcontrol.com
-  ADMIN_PASSWORD:
-     vault: ADMIN_PASSWORD
-  SITE_PRIVATE_KEY:
-     vault: SITE_PRIVATE_KEY
-  SITE_CERT: 
-     vault: SITE_CERT
-  revision : 1
-       
+  #Generate hash at https://ehikioya.com/wordpress-password-hash-generator/
+  ADMIN_PASSWORD_HASH: $P$BAeYgHEtHyCT335q2Iya9JL4CtKHc1/
+  revision : 2
