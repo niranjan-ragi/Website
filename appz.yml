@@ -19,20 +19,14 @@ deploy:
   - 80
 
 volumes:
-  - claim: wp-uploads
-    mount: /var/www/html/wp-content/uploads
-    name: uploads
-    size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
-  - claim: wp-backup
-    mount: /appz/backup
-    name: backup
-    size: 250Gi
-    mode: ReadWriteOnce
-    class: standard
-    matchLabels: false
+- claim: wordpress-data
+  mount: /var/www/html/wp-content/uploads
+  name: uploads
+  size: 5Gi   
+- claim: wordpress-backup
+  mount: /appz/backup
+  name: backup
+  size: 5Gi 
 
 monitor:
   notify: skchekon@ecloudcontrol.com      
