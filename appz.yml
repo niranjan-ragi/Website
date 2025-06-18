@@ -17,7 +17,7 @@ deploy:
   replicas: 1
   resources: x-large
   port:
-  - 443
+  - 80
 
 volumes:
   - claim: wp-content
