@@ -4,7 +4,7 @@ app:
   notify: skchekon@ecloudcontrol.com
 
 build:
-  version: 3.0
+  version: 6.7
   env: DEV
   build_file: none
   output_files: output/*.zip
@@ -47,4 +47,4 @@ properties:
      vault: MYSQL_PASSWORD
   #Generate hash at https://ehikioya.com/wordpress-password-hash-generator/
   ADMIN_PASSWORD_HASH: $P$BAeYgHEtHyCT335q2Iya9JL4CtKHc1/
-  revision : 9
+  revision : 10
