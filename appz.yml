@@ -16,7 +16,7 @@ deploy:
   replicas: 1
   resources: x-large
   port:
-  - 80
+  - 443
 
 volumes:
 - claim: wordpress-data
