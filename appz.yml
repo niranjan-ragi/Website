@@ -1,11 +1,11 @@
 app:
-  name: eCloudControl.com
-  code: website
+  name: v4.eCloudControl.com
+  code: ECSWEB
   notify: skchekon@ecloudcontrol.com
 
 build:
-  version: 6.7
-  env: DEV
+  version: 7.0
+  env: Dev
   build_file: none
   output_files: output/*.zip
   image_template: wordpress-6.7
@@ -13,38 +13,38 @@ build:
 deploy:
   context: skchekon/DEV
   type: statefulset
+  #ingress: none
   replicas: 1
   resources: x-large
   port:
-  - 80
+  - 443
 
 volumes:
-- claim: wordpress-data
-  mount: /var/www/html/wp-content/uploads
-  name: uploads
-  size: 5Gi   
-- claim: wordpress-backup
-  mount: /appz/backup
-  name: backup
-  size: 5Gi 
-
-monitor:
-  notify: skchekon@ecloudcontrol.com      
+  - claim: wp-content
+    mount: /var/www/html/wp-content/uploads
+    name: wp-content
+    size: 250Gi
+  - claim: wp-backup
+    mount: /appz/backup
+    name: backup
+    size: 250Gi   
 
 properties:
-  ENABLE_HA: "no"  
-  #if HA is disabled
   MYSQL_HOST : "mysql-5-7:3306"
-  #if HA is enabled
-  #MYSQL_MASTER_HOST : "mariadb-master-10-4:3306"
-  #MYSQL_SLAVE_HOST : "mariadb-slave-10-4:3306"
-  MYSQL_USER: wordpress
-  MYSQL_DATABASE: wordpress
-  ADMIN_USER: wpadmin
-  ADMIN_EMAIL: skchekon@ecloudcontrol.com
-  SITE_TITLE: "Wordpress AppZ Workshop Demo"
+  MYSQL_DATABASE : "wordpress"
+  MYSQL_USER : "wordpress"
+  ENABLE_HA : "no"
+  WP_BACKUP_VERBOSE : 0
   MYSQL_PASSWORD:
      vault: MYSQL_PASSWORD
-  #Generate hash at https://ehikioya.com/wordpress-password-hash-generator/
-  ADMIN_PASSWORD_HASH: $P$BAeYgHEtHyCT335q2Iya9JL4CtKHc1/
-  revision : 13
+  SITE_URL : "https://qa-wp.lowtouchcloud.io"
+  SITE_TITLE : "Lowtouch.Ai"
+  ADMIN_USER : webmaster
+  ADMIN_EMAIL : webmaster@ecloudcontrol.com
+  ADMIN_PASSWORD:
+     vault: ADMIN_PASSWORD
+  SITE_PRIVATE_KEY:
+     vault: SITE_PRIVATE_KEY
+  SITE_CERT: 
+     vault: SITE_CERT
+  revision : 0
