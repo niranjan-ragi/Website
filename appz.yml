@@ -1,6 +1,6 @@
 app:
   name: eCloudControl.com
-  code: wordpress
+  code: website
   notify: skchekon@ecloudcontrol.com
 
 build:
