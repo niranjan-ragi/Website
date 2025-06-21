@@ -18,7 +18,7 @@ deploy:
   resources: x-large
   port:
   - 443
-
+  - 9103
 volumes:
   - claim: wp-content
     mount: /var/www/html/wp-content/uploads
@@ -47,4 +47,5 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
+  ENABLE_BACKUP_METRIC: 1
   revision : 117
