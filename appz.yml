@@ -49,5 +49,5 @@ properties:
      vault: SITE_PRIVATE_KEY
   SITE_CERT: 
      vault: SITE_CERT
-  ENABLE_BACKUP_METRIC: 1
+  ENABLE_BACKUP_METRICS: 1
   revision : 93
