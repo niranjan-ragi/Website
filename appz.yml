@@ -1,17 +1,17 @@
 app:
   name: v4.eCloudControl.com
   code: ECSWEB
-  notify: skchekon@ecloudcontrol.com
+  notify: rniranjan@ecloudcontrol.com
 
 build:
-  version: 7.0
+  version: 6.7
   env: DEV
   build_file: none
   output_files: output/*.zip
   image_template: wordpress-6.7
 
 deploy:
-  context: skchekon/DEV
+  context: niranjan-ragi/DEV
   type: statefulset
   #ingress: none
   replicas: 1
@@ -23,20 +23,20 @@ volumes:
   - claim: wp-content
     mount: /var/www/html/wp-content/uploads
     name: wp-content
-    size: 250Gi
+    size: 5Gi
   - claim: wp-backup
     mount: /appz/backup
     name: backup
-    size: 250Gi   
+    size: 5Gi   
 
 properties:
-  MYSQL_HOST : "mysql-5-7:3306"
+  MYSQL_HOST : "mysql-8-0:3306"
   MYSQL_DATABASE : "hybcloud"
   MYSQL_USER : "hybcloud"
   ENABLE_HA : "no"
   WP_BACKUP_VERBOSE : 0
-  MYSQL_PASSWORD:
-     vault: MYSQL_PASSWORD
+  MYSQL_ROOT_PASSWORD:
+     vault: MYSQL_ROOT_PASSWORD
   SITE_URL : "https://qa-wp.lowtouchcloud.io"
   SITE_TITLE : "Lowtouch.Ai"
   ADMIN_USER : webmaster
