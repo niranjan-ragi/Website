@@ -23,11 +23,11 @@ volumes:
   - claim: wp-content
     mount: /var/www/html/wp-content/uploads
     name: wp-content
-    size: 5Gi
+    size: 10Gi
   - claim: wp-backup
     mount: /appz/backup
     name: backup
-    size: 5Gi   
+    size: 10Gi   
 
 properties:
   MYSQL_HOST : "mysql-8-0:3306"
